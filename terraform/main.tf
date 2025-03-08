@@ -21,8 +21,16 @@ locals {
 # get the most recent version of your AMI created with packer template
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ami
 data "aws_ami" "ubuntu" {
-  # COMPLETE ME
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["packer-ansible-nginx"]
+  }
+
+  owners = ["self"]  # Refers to your AWS account (since you created the AMI)
 }
+
 
 # Create a VPC
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc
@@ -61,7 +69,7 @@ resource "aws_internet_gateway" "web-gw" {
   }
 }
 
-# create route table for web VPC 
+# create route table for web VPC
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table
 resource "aws_route_table" "web" {
   vpc_id = aws_vpc.web.id
@@ -150,4 +158,3 @@ output "instance_ip_addr" {
     "dns_name"  = aws_instance.web.public_dns
   }
 }
-
