@@ -77,16 +77,8 @@ Copy the Public IP from the output and visit it in your browser to confirm that 
 ![Screenshot 2025-03-08 005928](https://github.com/user-attachments/assets/d22047eb-a683-4a0f-96e7-6e05636d62f7)
 
 ## Step 6: Clean Up Resources (Optional)
-If you wish to remove the deployed resources:
+Remove the deployed resources:
 ```bash
 terraform destroy
 ```
-Type `yes` when prompted to confirm deletion.
-
-## Notes
-- Ensure your AWS credentials are properly configured before starting.
-- If you encounter any errors, refer to the terminal output for troubleshooting hints.
-
-## Contact
-If you have any questions or issues, please feel free to reach out.
 
