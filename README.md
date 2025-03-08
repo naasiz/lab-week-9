@@ -76,7 +76,7 @@ Copy the Public IP from the output and visit it in your browser to confirm that 
 
 ![Screenshot 2025-03-08 005928](https://github.com/user-attachments/assets/d22047eb-a683-4a0f-96e7-6e05636d62f7)
 
-## Step 6: Clean Up Resources (Optional)
+## Step 6: Clean Up Resources
 Remove the deployed resources:
 ```bash
 terraform destroy
